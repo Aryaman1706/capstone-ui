@@ -2,7 +2,7 @@
 import { useRef } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 
-const ImagePicker = ({ key, file, preview, setPreview, setFile }) => {
+const ImagePicker = ({ key, file, preview, setPreview, setFile, name }) => {
   const fileInput = useRef(null);
 
   const handleUpload = (e) => {
@@ -18,7 +18,7 @@ const ImagePicker = ({ key, file, preview, setPreview, setFile }) => {
     <div className="flex flex-col relative h-1/2 bg-slate-700 w-[30vw] px-4 py-4 rounded">
       <div className="flex flex-row items-center justify-between">
         <div className="flex px-4 py-1 bg-slate-900 text-white text-sm border-gray-100 h-fit">
-          Input
+          { name }
         </div>
         <button
           className="bg-green-500 px-4 py-1 flex flex-row items-center text-sm font-semibold"

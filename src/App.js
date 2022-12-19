@@ -40,6 +40,7 @@ function App() {
             setFile={setFile1}
             preview={preview1}
             setPreview={setPreview1}
+            name={"Input"}
           />
           <ImagePicker
             key="input2"
@@ -47,6 +48,7 @@ function App() {
             setFile={setFile2}
             preview={preview2}
             setPreview={setPreview2}
+            name={"Target"}
           />
         </div>
         <div className="flex flex-col w-1/3 justify-center items-center">
