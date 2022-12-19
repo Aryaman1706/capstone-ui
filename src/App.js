@@ -19,13 +19,16 @@ function App() {
   const [preview1, setPreview1] = useState(null);
   const [file2, setFile2] = useState(null);
   const [preview2, setPreview2] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const updateOutputImage = (base64Img) => {
+    setLoading(false);
     setOutput(base64Img);
   };
 
   const clickHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
     callApi(file1, file2, task, body, updateOutputImage);
   };
 
@@ -94,7 +97,7 @@ function App() {
           </div>
         </div>
         <div className="flex flex-col flex-1">
-          <OutputImagePicker output={output} setOutput={setOutput} />
+          <OutputImagePicker output={output} setOutput={setOutput} loading={loading} />
         </div>
       </div>
       <div className="py-4">

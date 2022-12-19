@@ -1,4 +1,4 @@
-const OutputImagePicker = ({ output, setOutput }) => {
+const OutputImagePicker = ({ output, setOutput, loading }) => {
   return (
     <div className="flex flex-col h-full bg-slate-700 w-full px-4 py-4 rounded">
       <div className="flex flex-row items-center">
@@ -10,7 +10,7 @@ const OutputImagePicker = ({ output, setOutput }) => {
         <img src={output} alt="ima" className="h-[620px] object-contain my-4" />
       ) : (
         <div className="flex h-full items-center justify-center text-white font-bold">
-          <p>Generate an image by uploading input images</p>
+          <p>{loading ? "Loading..." : "Generate an image by uploading input images"}</p>
         </div>
       )}
     </div>
